@@ -6,20 +6,22 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { addtask } from './api';
 
 
-const  Addtask=({match})=> {
+const  Addtask1=({match})=> {
   const { user, isAuthenticated,loginWithRedirect } = useAuth0();
   const [values, setValues] = useState({
 
       title: "",
       description: "",
       createdby: user.name,
-      assignedto: "",
+      assignedto: user.name,
       estimation: "",
       status: "not completed",
       adminId: window.$adminid,
-      projectId:match.params.id,
+      projectId:"",
 })
 
+
+console.log(values)
 const [result,setresult]=useState({
   error:false,
   success:"",
@@ -115,4 +117,4 @@ const onsubmit=event =>{
     )
 }
 
-export default Addtask
+export default Addtask1

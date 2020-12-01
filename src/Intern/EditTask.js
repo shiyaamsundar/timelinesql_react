@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Nav from '../Nav'
-
-
 import { useAuth0 } from "@auth0/auth0-react";
-import { updatetask,gettask } from './api';
+import { gettask, updatetask } from './api';
 
 
-const EditProgress=({match})=> {
+
+
+const EditTask=({match})=> {
   const {pathname}=useLocation();
   const { user, isAuthenticated,loginWithRedirect } = useAuth0();
 
@@ -86,7 +86,7 @@ event.preventDefault();
 setvalues({...values})
 setresult({...result,error:false,success:"true"}) 
 
-updatetask(values.projectId,values)
+updatetask(values.id,values)
 
 
 .then(data=>{
@@ -153,4 +153,4 @@ return (
 )
 }
 
-export default EditProgress
+export default EditTask
