@@ -101,5 +101,4 @@ width:65%;
 `;
 
 
-
 export default Home

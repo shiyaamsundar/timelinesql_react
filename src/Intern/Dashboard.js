@@ -41,8 +41,6 @@ console.log('intern',intern.projects)
               loadintern()        
           }
       })
-      
-
   }
 
   useEffect(()=>{

@@ -87,7 +87,7 @@ export const gettask=(id)=>{
 }
 
 export const projecttasks=(id)=>{
-    return fetch(`${API}/admin/projects/${id}/tasks`,
+    return fetch(`${API}/intern/projects/${id}/tasks`,
     {method:'GET',}
     )
     .then(res=>{
