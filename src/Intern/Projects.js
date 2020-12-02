@@ -126,6 +126,14 @@ const Projects=({match})=> {
         <TODOdiv2> <span className="pl-5">In-Progress</span></TODOdiv2>
         <TODOdiv3> <span className="pl-5">Completed</span></TODOdiv3>
         </div>
+        {internproject.loading &&(
+            <div className="d-flex justify-content-center pt-5">
+         
+            <div className="spinner-border" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
         <div className="row">
             {internproject.incomp &&(
 

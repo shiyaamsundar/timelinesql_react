@@ -1,4 +1,4 @@
-const API="http://localhost:5000"
+const API="https://loopbackheroku-api.herokuapp.com"
 
 
 export const interndashboard=(id)=>{

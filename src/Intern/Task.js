@@ -113,7 +113,7 @@ console.log(match.params.id)
         <StyledI>
         <Link to={`/project/addtask`}> <div className="row container pt-2"> <i class="fa fa-plus" aria-hidden="true"/><h5>
             Add Task</h5></div></Link>
-            <Link to="/project/issue"> <div className="row container pt-4" ><i class="fa fa-bug" aria-hidden="true"/><h5>Raise Issue</h5></div></Link>
+            <Link> <div className="row container pt-4" ><i class="fa fa-bug" aria-hidden="true"/><h5>Raise Issue</h5></div></Link>
             <Link><div className="row container pt-4"><i class="fa fa-code" aria-hidden="true"/><h5>Components</h5></div></Link>
             <Link><div className="row container pt-4"><i class="fa fa-file-o" aria-hidden="true"/><h5>Code</h5></div></Link>
             <Link><div className="row container pt-4"><i class="fa fa-cog" aria-hidden="true"/><h5>Project Settings</h5></div></Link>
@@ -131,6 +131,14 @@ console.log(match.params.id)
         <TODOdiv2> <span className="pl-5">In-Progress</span></TODOdiv2>
         <TODOdiv3> <span className="pl-5">Completed</span></TODOdiv3>
         </div>
+        {interntask.loading &&(
+            <div className="d-flex justify-content-center pt-5">
+         
+            <div className="spinner-border" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
         <div className="row">
         {interntask.incomp &&(
 
