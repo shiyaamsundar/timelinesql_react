@@ -45,13 +45,20 @@ const successmessgae=()=>{
 
   return (
 <div className="alert alert-success mt-3" 
-      style={{display:success?"":"none"}}            >
+      style={{display:success?"":"none"}}        >
          Task has been Added Successfully by {title}  <Link to="/">Click here</Link> to go back Home
       </div> 
   )
 }
 const onsubmit=event =>{
   event.preventDefault();
+  if(!values.title || !values.createdby || !values.projectId|| !values.estimation || !values.description || !values.assignedto )
+{
+  alert("please include all fields")
+}
+else{
+  alert("Task has been added successfully")
+
   setValues({...values})
   setresult({...result,error:false,success:"true"}) 
   
@@ -73,7 +80,7 @@ const onsubmit=event =>{
 
   }).catch(err=>console.log(err))
 }
-
+}
 
     return (
         <div>
@@ -90,7 +97,7 @@ const onsubmit=event =>{
 
     <div class="form-group col-md-6">
       <label>Assigned to</label>
-      <input type="email" className="form-control" onChange={handlechange("assignedto")} autoFocus required placeholder="Assigning To" value={assignedto}/>
+      <input type="email" className="form-control" onChange={handlechange("assignedto")} autoFocus required placeholder="Assigning To-intern email" value={assignedto}/>
     </div>
     <div class="form-group col-md-6">
       <label>Project Id</label>
@@ -98,7 +105,7 @@ const onsubmit=event =>{
     </div>
     <div class="form-group col-md-6">
       <label>Created By</label>
-      <input type="email" className="form-control" onChange={handlechange("createdby")} autoFocus required placeholder="Created BY" value={createdby}/>
+      <input type="email" className="form-control" onChange={handlechange("createdby")} autoFocus required placeholder="Created BY-admin email" value={createdby}/>
     </div>
     <div class="form-group col-10">
       <label>Description</label>
@@ -106,7 +113,7 @@ const onsubmit=event =>{
     </div>
     <div class="form-group col-2">
       <label>Estimation</label>
-      <input type="text" className="form-control" onChange={handlechange("estimation")} autoFocus required placeholder="Estimation" value={estimation}/>
+      <input type="text" className="form-control" onChange={handlechange("estimation")} autoFocus required placeholder="Estimation-time" value={estimation}/>
     </div>
 
     <span className="pt-5"></span>
